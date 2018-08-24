@@ -52,12 +52,13 @@ describe("FetchApi", () => {
 
     it("returns a planet object people when provided planet type and result from fetch", async () => {
       const initialFetch = await fetchSpecific("planets", mockResultPlanet);
+
       const expectedObjectPromise = {
         name: "Alderaan",
         populaton: "2000000000",
         terrain: "grasslands, mountains",
         climate: "temperate",
-        residents: [undefined, undefined, undefined]
+        residents: `, , `
       };
       expect(initialFetch).toEqual(expectedObjectPromise);
     });
@@ -68,7 +69,7 @@ describe("FetchApi", () => {
         name: "Sand Crawler",
         model: "Digger Crawler",
         class: "wheeled",
-        numberof_passengers: "30"
+        'number of passengers': "30"
       };
 
       expect(initialFetch).toEqual(expectedObjectPromise);

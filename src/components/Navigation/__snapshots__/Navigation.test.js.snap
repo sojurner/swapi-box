@@ -3,23 +3,13 @@
 exports[`ContentRoute should match snapshot with data object passed 1`] = `
 <Switch>
   <Route
+    component={[Function]}
     exact={true}
-    path="/planets"
-    render={[Function]}
+    path="/"
   />
   <Route
     exact={true}
-    path="/people"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/vehicles"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/favorites"
+    path="/undefined"
     render={[Function]}
   />
 </Switch>
@@ -28,23 +18,13 @@ exports[`ContentRoute should match snapshot with data object passed 1`] = `
 exports[`ContentRoute should match snapshot without data object passed 1`] = `
 <Switch>
   <Route
+    component={[Function]}
     exact={true}
-    path="/planets"
-    render={[Function]}
+    path="/"
   />
   <Route
     exact={true}
-    path="/people"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/vehicles"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/favorites"
+    path="/undefined"
     render={[Function]}
   />
 </Switch>
@@ -55,58 +35,68 @@ exports[`NavBar should match snapshot when activeButton is favorites 1`] = `
   className="navigation_bar"
 >
   <div
-    className="planets__CONTAINER"
+    className="CONTAINER"
+    key="0"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="planets__NAV"
+      className="NAV"
       exact={true}
       name="planets"
       onClick={[Function]}
       to="/planets"
     >
       planets
+       
     </NavLink>
   </div>
   <div
-    className="people__CONTAINER"
+    className="CONTAINER"
+    key="1"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="people__NAV"
+      className="NAV"
+      exact={true}
       name="people"
       onClick={[Function]}
       to="/people"
     >
       people
+       
     </NavLink>
   </div>
   <div
-    className="vehicles__CONTAINER"
+    className="CONTAINER"
+    key="2"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="vehicles__NAV"
+      className="NAV"
       name="vehicles"
-      onClick={[Function]}
-      to="/vehicles"
     >
       vehicles
+       
     </NavLink>
   </div>
   <div
-    className="favorites__CONTAINER"
+    className="CONTAINER"
+    key="3"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="favorites__NAV pressed"
+      className="NAV"
+      exact={true}
+      name="favorites"
+      onClick={[Function]}
       to="/favorites"
     >
-      Favorites: 
+      favorites
+       
       0
     </NavLink>
   </div>
@@ -118,58 +108,71 @@ exports[`NavBar should match snapshot when activeButton is people 1`] = `
   className="navigation_bar"
 >
   <div
-    className="planets__CONTAINER"
+    className="CONTAINER"
+    key="0"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="planets__NAV"
+      className="NAV"
       exact={true}
       name="planets"
       onClick={[Function]}
       to="/planets"
     >
       planets
+       
     </NavLink>
   </div>
   <div
-    className="people__CONTAINER"
+    className="CONTAINER"
+    key="1"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="people__NAV pressed"
+      className="NAV"
+      exact={true}
       name="people"
       onClick={[Function]}
       to="/people"
     >
       people
+       
     </NavLink>
   </div>
   <div
-    className="vehicles__CONTAINER"
+    className="CONTAINER"
+    key="2"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="vehicles__NAV"
+      className="NAV"
+      exact={true}
       name="vehicles"
       onClick={[Function]}
       to="/vehicles"
     >
       vehicles
+       
     </NavLink>
   </div>
   <div
-    className="favorites__CONTAINER"
+    className="CONTAINER"
+    key="3"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="favorites__NAV"
+      className="NAV"
+      exact={true}
+      name="favorites"
+      onClick={[Function]}
       to="/favorites"
     >
-      Favorites: 
+      favorites
+       
       0
     </NavLink>
   </div>
@@ -181,58 +184,71 @@ exports[`NavBar should match snapshot when activeButton is planets 1`] = `
   className="navigation_bar"
 >
   <div
-    className="planets__CONTAINER"
+    className="CONTAINER"
+    key="0"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="planets__NAV pressed"
+      className="NAV"
       exact={true}
       name="planets"
       onClick={[Function]}
       to="/planets"
     >
       planets
+       
     </NavLink>
   </div>
   <div
-    className="people__CONTAINER"
+    className="CONTAINER"
+    key="1"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="people__NAV"
+      className="NAV"
+      exact={true}
       name="people"
       onClick={[Function]}
       to="/people"
     >
       people
+       
     </NavLink>
   </div>
   <div
-    className="vehicles__CONTAINER"
+    className="CONTAINER"
+    key="2"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="vehicles__NAV"
+      className="NAV"
+      exact={true}
       name="vehicles"
       onClick={[Function]}
       to="/vehicles"
     >
       vehicles
+       
     </NavLink>
   </div>
   <div
-    className="favorites__CONTAINER"
+    className="CONTAINER"
+    key="3"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="favorites__NAV"
+      className="NAV"
+      exact={true}
+      name="favorites"
+      onClick={[Function]}
       to="/favorites"
     >
-      Favorites: 
+      favorites
+       
       0
     </NavLink>
   </div>
@@ -244,58 +260,71 @@ exports[`NavBar should match snapshot when activeButton is vehicles 1`] = `
   className="navigation_bar"
 >
   <div
-    className="planets__CONTAINER"
+    className="CONTAINER"
+    key="0"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="planets__NAV"
+      className="NAV"
       exact={true}
       name="planets"
       onClick={[Function]}
       to="/planets"
     >
       planets
+       
     </NavLink>
   </div>
   <div
-    className="people__CONTAINER"
+    className="CONTAINER"
+    key="1"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="people__NAV"
+      className="NAV"
+      exact={true}
       name="people"
       onClick={[Function]}
       to="/people"
     >
       people
+       
     </NavLink>
   </div>
   <div
-    className="vehicles__CONTAINER"
+    className="CONTAINER"
+    key="2"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="vehicles__NAV pressed"
+      className="NAV"
+      exact={true}
       name="vehicles"
       onClick={[Function]}
       to="/vehicles"
     >
       vehicles
+       
     </NavLink>
   </div>
   <div
-    className="favorites__CONTAINER"
+    className="CONTAINER"
+    key="3"
   >
     <NavLink
       activeClassName="active"
       aria-current="page"
-      className="favorites__NAV"
+      className="NAV"
+      exact={true}
+      name="favorites"
+      onClick={[Function]}
       to="/favorites"
     >
-      Favorites: 
+      favorites
+       
       0
     </NavLink>
   </div>

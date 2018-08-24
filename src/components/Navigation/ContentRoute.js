@@ -2,67 +2,35 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import { HomePage } from '../HomePage';
 import { CardContainer } from "../CardContainer";
 
 export const ContentRoute = ({
-  planets,
-  people,
-  vehicles,
   toggleFavorites,
   favorites,
-  handlePage
+  handlePage,
+  dataType,
+  activeButton
 }) => {
   const savedFavorites = favorites.map(favorite => favorite.name);
   return (
     <Switch>
+      <Route exact path='/' component={HomePage} />
       <Route
-        exact
-        path="/planets"
-        render={() => {
+        exact path={`/${activeButton}`}
+        render={({match}) => {
+          const { path } = match;
+          const chosenPath = path.slice(1);
           return (
             <CardContainer
-              data={planets}
+              data={dataType[chosenPath]}
               handlePage={handlePage}
               toggleFavorites={toggleFavorites}
               savedFavorites={savedFavorites}
+              isFavorites={activeButton === 'favorites'}
             />
           );
         }}
-      />
-      <Route
-        exact
-        path="/people"
-        render={() => (
-          <CardContainer
-            data={people}
-            handlePage={handlePage}
-            toggleFavorites={toggleFavorites}
-            savedFavorites={savedFavorites}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/vehicles"
-        render={() => (
-          <CardContainer
-            data={vehicles}
-            handlePage={handlePage}
-            toggleFavorites={toggleFavorites}
-            savedFavorites={savedFavorites}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/favorites"
-        render={() => (
-          <CardContainer
-            data={favorites}
-            toggleFavorites={toggleFavorites}
-            savedFavorites={savedFavorites}
-          />
-        )}
       />
     </Switch>
   );

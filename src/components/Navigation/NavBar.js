@@ -4,48 +4,23 @@ import PropTypes from "prop-types";
 import "./Navigation.css";
 
 export const NavBar = ({ getData, favorites }) => {
-
+  const linkTypes = ['planets', 'people', 'vehicles', 'favorites'];
+  const displayNavLinks = linkTypes.map((linkType, i) => {
+    return (
+      <div className="CONTAINER" key={i}>
+        <NavLink 
+          className="NAV"
+          name={linkType}
+          exact to={`/${linkType}`}
+          onClick={getData}
+        >
+          {linkType} {linkType === 'favorites' ? favorites.length : ''}
+        </NavLink>
+      </div>);
+  });
   return (
     <div className="navigation_bar">
-      <div className="CONTAINER">
-        <NavLink
-          className="NAV"
-          name="planets"
-          exact
-          to="/planets"
-          onClick={getData}
-        >
-          planets
-        </NavLink>
-      </div>
-      <div className="CONTAINER">
-        <NavLink
-          className="NAV"
-          name="people"
-          to="/people"
-          onClick={getData}
-        >
-          people
-        </NavLink>
-      </div>
-      <div className="CONTAINER">
-        <NavLink
-          className="NAV"
-          name="vehicles"
-          to="/vehicles"
-          onClick={getData}
-        >
-          vehicles
-        </NavLink>
-      </div>
-      <div className="CONTAINER">
-        <NavLink
-          className="NAV"
-          to="/favorites"
-        >
-          favorites {favorites.length}
-        </NavLink>
-      </div>
+      {displayNavLinks}
     </div>
   );
 };

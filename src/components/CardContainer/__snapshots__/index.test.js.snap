@@ -58,7 +58,6 @@ exports[`CardContainer should match snapshot with favorites 1`] = `
 
 exports[`CardContainer should match snapshot without data object passed 1`] = `
 <section
-  img={true}
-  src="../../images/BattleFront.jpg"
+  className="card_container"
 />
 `;

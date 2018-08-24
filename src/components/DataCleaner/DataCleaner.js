@@ -24,7 +24,7 @@ export const planetScrape = (result, residents) => {
     populaton: result.population,
     terrain: result.terrain,
     climate: result.climate,
-    residents: residents
+    residents: residents.join(', ')
   };
   return modifiedObj;
 };
@@ -34,7 +34,7 @@ export const vehicleScrape = vehicle => {
     name: vehicle.name,
     model: vehicle.model,
     class: vehicle.vehicle_class,
-    numberof_passengers: vehicle.passengers
+    'number of passengers': vehicle.passengers
   };
   return modifiedObj;
 };

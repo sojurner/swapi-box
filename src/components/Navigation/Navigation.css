@@ -15,8 +15,8 @@
 .NAV {
   color: white;
   background: rgba(255, 255, 255, 0.6);
-  border: 0.1rem solid rgb(111, 118, 104);
   box-shadow: 1.5px 1.5px 1.5px transparent;
+  border: 0.1rem solid rgb(111, 118, 104);
   border-radius: 3px;
   font-size: 2rem;
   font-family: equinox;
@@ -26,9 +26,9 @@
 }
 
 .NAV:hover {
-  font-family: equinox-bold;
-  box-shadow: 1.5px 1.5px 1.5px #ccc;
   background: rgb(117, 116, 116);
+  box-shadow: 1.5px 1.5px 1.5px #ccc;
+  font-family: equinox-bold;
 }
 
 .active {

@@ -963,3 +963,43 @@ export const mockResultResident = {
   edited: "2014-12-20T21:17:50.315000Z",
   url: "https://swapi.co/api/people/5/"
 };
+
+export const mockSpecies = {
+  species: [
+    {
+      name: "Human",
+      classification: "mammal",
+      designation: "sentient",
+      average_height: "180",
+      skin_colors: "caucasian, black, asian, hispanic",
+      hair_colors: "blonde, brown, black, red",
+      eye_colors: "brown, blue, green, hazel, grey, amber",
+      average_lifespan: "120",
+      homeworld: {
+        name: "Coruscant",
+        rotation_period: "24",
+        orbital_period: "368",
+        diameter: "12240",
+        climate: "temperate",
+        gravity: "1 standard",
+        terrain: "cityscape, mountains",
+        surface_water: "unknown",
+        population: "1000000000000"
+      }
+    }
+  ]
+};
+
+export const mockHomeWorld = {
+  homeworld: {
+    name: "Coruscant",
+    rotation_period: "24",
+    orbital_period: "368",
+    diameter: "12240",
+    climate: "temperate",
+    gravity: "1 standard",
+    terrain: "cityscape, mountains",
+    surface_water: "unknown",
+    population: "1000000000000"
+  }
+};

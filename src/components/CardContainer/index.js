@@ -7,35 +7,40 @@ export const CardContainer = ({
   data,
   toggleFavorites,
   savedFavorites,
-  handlePage
+  handlePage,
+  isFavorites
 }) => {
 
-if (!data) return <section>{}</section>;
-  const cards =  
-    data.map((card, index) => {
-      card.favorite = savedFavorites.includes(card.name);
-      return (
-        <ContentCard key={index} card={card} toggleFavorites={toggleFavorites} />
-      );
-    })
+  if (isFavorites && !data.length) { 
+    return (
+      <section className="card_container">
+        <p className="empty-fav">These aren't the favorites you're looking for...</p>
+      </section>);
+  }
+  if (!data) return (<section className="card_container">{}</section>);
+  
+  const cards = data.map((card, index) => {
+    card.favorite = savedFavorites.includes(card.name);
+    return (
+      <ContentCard key={index} card={card} toggleFavorites={toggleFavorites} />
+    );
+  });
 
   return (
-    <section className="card_container">
+    <section className={isFavorites ? "favorites card_container" : "card_container"}>
       {cards && cards}
-      <button
-        className="previous-page-button"
-        onClick={() => handlePage(false)}
-      />
+      <button className="previous-page-button" onClick={() => handlePage(false)} />
       <button className="next-page-button" onClick={() => handlePage(true)} />
     </section>
   );
 };
 
-const { arrayOf, func, object, string } = PropTypes;
+const { arrayOf, func, object, string, bool } = PropTypes;
 
 CardContainer.propTypes = {
   data: arrayOf(object),
   savedFavorites: arrayOf(string),
   toggleFavorites: func,
-  handlePage: func
+  handlePage: func,
+  isFavorites: bool
 };

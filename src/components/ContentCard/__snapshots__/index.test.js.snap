@@ -13,28 +13,27 @@ exports[`ContentCard should match snapshot with Person favorite status true 1`] 
     key="species1"
   >
     species
-     : 
+    : 
     Human
   </p>
   <p
     key="homeworld2"
   >
     homeworld
-     : 
+    : 
     Tatooine
   </p>
   <p
     key="population3"
   >
     population
-     : 
+    : 
     200000
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
 
@@ -46,7 +45,7 @@ exports[`ContentCard should match snapshot with Person favorite status true 2`] 
     key="climate0"
   >
     climate
-     : 
+    : 
     temperate
   </p>
   <h1
@@ -58,14 +57,14 @@ exports[`ContentCard should match snapshot with Person favorite status true 2`] 
     key="populaton3"
   >
     populaton
-     : 
+    : 
     2000000000
   </p>
   <p
     key="residents4"
   >
     residents
-     : 
+    : 
     Leia Organa
     Bail Prestor Organa
     Raymus Antilles
@@ -74,14 +73,13 @@ exports[`ContentCard should match snapshot with Person favorite status true 2`] 
     key="terrain5"
   >
     terrain
-     : 
+    : 
     grasslands, mountains
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
 
@@ -98,28 +96,27 @@ exports[`ContentCard should match snapshot with Person favorite status true 3`] 
     key="model1"
   >
     model
-     : 
+    : 
     Digger Crawler
   </p>
   <p
     key="class2"
   >
     class
-     : 
+    : 
     wheeled
   </p>
   <p
     key="numberof_passengers3"
   >
     numberof_passengers
-     : 
+    : 
     30
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
 
@@ -136,28 +133,27 @@ exports[`ContentCard should match snapshot with people data object passed 1`] = 
     key="species1"
   >
     species
-     : 
+    : 
     Human
   </p>
   <p
     key="homeworld2"
   >
     homeworld
-     : 
+    : 
     Tatooine
   </p>
   <p
     key="population3"
   >
     population
-     : 
+    : 
     200000
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
 
@@ -169,7 +165,7 @@ exports[`ContentCard should match snapshot with planet data object passed 1`] = 
     key="climate0"
   >
     climate
-     : 
+    : 
     temperate
   </p>
   <h1
@@ -181,14 +177,14 @@ exports[`ContentCard should match snapshot with planet data object passed 1`] = 
     key="populaton3"
   >
     populaton
-     : 
+    : 
     2000000000
   </p>
   <p
     key="residents4"
   >
     residents
-     : 
+    : 
     Leia Organa
     Bail Prestor Organa
     Raymus Antilles
@@ -197,14 +193,13 @@ exports[`ContentCard should match snapshot with planet data object passed 1`] = 
     key="terrain5"
   >
     terrain
-     : 
+    : 
     grasslands, mountains
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
 
@@ -221,27 +216,26 @@ exports[`ContentCard should match snapshot with vehicle data object passed 1`] =
     key="model1"
   >
     model
-     : 
+    : 
     Digger Crawler
   </p>
   <p
     key="class2"
   >
     class
-     : 
+    : 
     wheeled
   </p>
   <p
     key="numberof_passengers3"
   >
     numberof_passengers
-     : 
+    : 
     30
   </p>
   <button
+    className="button"
     onClick={[Function]}
-  >
-    Favorite
-  </button>
+  />
 </article>
 `;
