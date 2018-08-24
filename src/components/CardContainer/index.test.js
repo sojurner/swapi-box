@@ -29,6 +29,7 @@ describe("CardContainer", () => {
         handlePage={handlePage}
         toggleFavorites={toggleFavorites}
         savedFavorites={savedFavorites}
+        isFavorites={false}
       />
     );
   });
@@ -45,12 +46,13 @@ describe("CardContainer", () => {
         handlePage={handlePage}
         toggleFavorites={toggleFavorites}
         savedFavorites={savedFavorites}
+        isFavorites={false}
       />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should match snapshot with favorites", () => {
+  it("should match snapshot with favorites and data", () => {
     savedFavorites = ["Luke Skywalker"];
     wrapper = shallow(
       <CardContainer
@@ -58,6 +60,21 @@ describe("CardContainer", () => {
         handlePage={handlePage}
         toggleFavorites={toggleFavorites}
         savedFavorites={savedFavorites}
+        isFavorites={true}
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should match snapshot with favorites and no data", () => {
+    savedFavorites = ["Luke Skywalker"];
+    wrapper = shallow(
+      <CardContainer
+        data={[]}
+        handlePage={handlePage}
+        toggleFavorites={toggleFavorites}
+        savedFavorites={savedFavorites}
+        isFavorites={true}
       />
     );
     expect(wrapper).toMatchSnapshot();

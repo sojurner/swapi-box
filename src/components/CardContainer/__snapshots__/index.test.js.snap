@@ -28,9 +28,9 @@ exports[`CardContainer should match snapshot with data object passed 1`] = `
 </section>
 `;
 
-exports[`CardContainer should match snapshot with favorites 1`] = `
+exports[`CardContainer should match snapshot with favorites and data 1`] = `
 <section
-  className="card_container"
+  className="favorites card_container"
 >
   <Component
     card={
@@ -53,6 +53,18 @@ exports[`CardContainer should match snapshot with favorites 1`] = `
     className="next-page-button"
     onClick={[Function]}
   />
+</section>
+`;
+
+exports[`CardContainer should match snapshot with favorites and no data 1`] = `
+<section
+  className="card_container"
+>
+  <p
+    className="empty-fav"
+  >
+    These are not the favorites you're looking for...
+  </p>
 </section>
 `;
 
