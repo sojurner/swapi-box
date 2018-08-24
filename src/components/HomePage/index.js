@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HomePage = (props) => {
+export const HomePage = () => {
   return (
     <div>
       <h1>Welcome to SWAPI Box</h1>

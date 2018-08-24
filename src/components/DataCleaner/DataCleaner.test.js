@@ -47,14 +47,14 @@ describe("DataCleaner", () => {
     expect(modifiedPeopleObject).toEqual(expectedResult);
   });
 
-  it("should clean planet data into scraped planet object", () => {
+  it("should clean planet data into scraped planet object", async () => {
     mockResultData = mockPlanets;
-    const mockResidents = ["Anakin Skywalker", "Luke Skywalker"];
+    const mockResidents = [["Anakin Skywalker"],["Luke Skywalker"]];
     const expected = {
       climate: undefined,
       name: undefined,
       populaton: undefined,
-      residents: ["Anakin Skywalker", "Luke Skywalker"],
+      residents: `Anakin Skywalker, Luke Skywalker`,
       terrain: undefined
     };
     const modifiedPlanetObject = planetScrape(mockResultData, mockResidents);
@@ -67,7 +67,7 @@ describe("DataCleaner", () => {
       class: "wheeled",
       model: "Digger Crawler",
       name: "Sand Crawler",
-      numberof_passengers: "30"
+      'number of passengers': "30"
     };
     const modifiedVehicleObject = vehicleScrape(mockResultData);
     expect(modifiedVehicleObject).toEqual(expected);

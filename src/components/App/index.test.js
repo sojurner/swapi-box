@@ -83,14 +83,6 @@ describe("App", () => {
     });
 
     describe('setRandomFilm', () => {
-      it.skip("should be called on componentDidMount", async () => {
-        wrapper = shallow(<App />);
-        let setRandomFilm = wrapper.instance().setRandomFilm;
-        setRandomFilm = jest.fn();
-        await wrapper.instance().componentDidMount();
-        expect(setRandomFilm).toHaveBeenCalled();
-      });
-
       it("should set state backgroundFilm of single film from the films array in state", () => {
         wrapper = shallow(<App />);
         const films = [{}, {}, {}];
@@ -166,10 +158,10 @@ describe("App", () => {
       });
 
       it("setFavoritesFromStorage should return if favorites from localStorage does not exist", () => {
-        favorites = ['NOTHING HERE'];
+        favorites = [{nada:'NOTHING HERE'}];
         wrapper.setState({ favorites });
         wrapper.instance().setFavoritesFromStorage();
-        expect(wrapper.state('favorites')).toEqual(['NOTHING HERE']);
+        expect(wrapper.state('favorites')).toEqual([{nada:'NOTHING HERE'}]);
       });
     });
 
@@ -215,6 +207,14 @@ describe("App", () => {
 
         wrapper.instance().handlePage(true);
         expect(wrapper.state('pageCounter')).toEqual(2); 
+      });
+
+      it("should default in switch case if no other cases are met", () => {
+        wrapper = shallow(<App />);
+        wrapper.instance().handlePage('true');
+        expect(wrapper.state('pageCounter')).toEqual(1);
+        wrapper.instance().handlePage('true');
+        expect(wrapper.state('pageCounter')).toEqual(1);
       });
         
     });

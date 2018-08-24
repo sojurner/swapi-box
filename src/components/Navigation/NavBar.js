@@ -36,7 +36,7 @@ NavBar.propTypes = {
       favorite: bool,
       model: string,
       name: string,
-      numberof_passengers: string
+      'number of passengers': string
     })
   )
 };

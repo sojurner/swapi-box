@@ -32,10 +32,7 @@ exports[`App should match snapshot with background scroll in state  1`] = `
     }
     favorites={Array []}
     handlePage={[Function]}
-    people={null}
-    planets={null}
     toggleFavorites={[Function]}
-    vehicles={null}
   />
 </div>
 `;
@@ -69,10 +66,7 @@ exports[`App should match snapshot with default states 1`] = `
     }
     favorites={Array []}
     handlePage={[Function]}
-    people={null}
-    planets={null}
     toggleFavorites={[Function]}
-    vehicles={null}
   />
 </div>
 `;

@@ -76,7 +76,10 @@ exports[`NavBar should match snapshot when activeButton is favorites 1`] = `
       activeClassName="active"
       aria-current="page"
       className="NAV"
+      exact={true}
       name="vehicles"
+      onClick={[Function]}
+      to="/vehicles"
     >
       vehicles
        
