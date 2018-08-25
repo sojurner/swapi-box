@@ -71,5 +71,11 @@ exports[`CardContainer should match snapshot with favorites and no data 1`] = `
 exports[`CardContainer should match snapshot without data object passed 1`] = `
 <section
   className="card_container"
-/>
+>
+  <img
+    height="100px"
+    src="https://media2.giphy.com/media/10MKHgkZMDlQ4M/giphy.gif"
+    width="100px"
+  />
+</section>
 `;

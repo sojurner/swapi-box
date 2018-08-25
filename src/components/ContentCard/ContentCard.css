@@ -1,3 +1,16 @@
+.content_card {
+  position: relative;
+  background: rgba(141, 141, 141, 0.699);
+  border-radius: 0.3rem;
+  border: 0.2rem solid #d3d3d3;
+  padding:  0 0.8rem;
+  overflow: scroll;
+
+  margin: 0.5rem;
+  max-height: 15rem;
+  width: 15rem;
+}
+
 .content_card h1 {
   animation: fade 0.7s ease-in;
   color: white;
@@ -9,16 +22,6 @@
   font-family: equinox-bold;
   animation: fade 0.5s ease-out;
   animation: fade 0.5s ease-in;
-}
-
-.content_card {
-  position: relative;
-  background: rgba(141, 141, 141, 0.699);
-  border-radius: 0.3rem;
-  border: 0.2rem solid #d3d3d3;
-  padding:  0 0.8rem;
-  margin: 0.5rem;
-  width: 15rem;
 }
 
 .content_card button {
