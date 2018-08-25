@@ -1,34 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContentRoute should match snapshot with data object passed 1`] = `
-<Switch>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/"
-  />
-  <Route
-    exact={true}
-    path="/undefined"
-    render={[Function]}
-  />
-</Switch>
-`;
+exports[`ContentRoute should match snapshot with data object passed 1`] = `undefined`;
 
-exports[`ContentRoute should match snapshot without data object passed 1`] = `
-<Switch>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/"
-  />
-  <Route
-    exact={true}
-    path="/undefined"
-    render={[Function]}
-  />
-</Switch>
-`;
+exports[`ContentRoute should match snapshot without data object passed 1`] = `undefined`;
 
 exports[`NavBar should match snapshot when activeButton is favorites 1`] = `
 <div

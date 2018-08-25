@@ -40,7 +40,7 @@
 }
 
 .favorite {
-  background-color: aqua;
+  background: rgb(86, 90, 94);
 }
 
 .favorite button {
@@ -62,7 +62,6 @@
 
 @media only screen and (max-width: 400px) {
   .content_card {
-    width: 100%;
     margin: 0.5rem 0;
   }
 }

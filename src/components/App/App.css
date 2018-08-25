@@ -4,7 +4,6 @@
   margin: 0;
   position: absolute;
   width: 100vw;
-  height: 100vh;
 }
 
 .App__TITLE {
@@ -23,16 +22,36 @@
   margin: 0;
 }
 
+.header {
+  color: #c9c0b5;
+  background: rgba(100, 100, 100, 0.623);
+  letter-spacing: 3px;
+  padding: 0.8rem 0;
+  margin: 1rem auto;
+  min-width: 5rem;
+  width: 100%;
+  max-width: 32rem;
+  text-align: center;
+  border-radius: .7rem;
+}
+
+.header h1, .header h4 {
+  margin: 0.2rem;
+}
+
 .planets {
-  background: url(../../images/BattleFront.jpg) no-repeat;
+  background: url(../../images/BattleFront.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .people {
-  background: url(../../images/sw-people.jpg) no-repeat;
+  background: url(../../images/sw-people.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .vehicles {
-  background: url(../../images/star-wars-droid.jpg) no-repeat;
+  background: url(../../images/star-wars-droid.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 

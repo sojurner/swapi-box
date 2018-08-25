@@ -1,4 +1,3 @@
-import React from "react";
 import {
   mockPeople,
   mockSpecies,
@@ -49,7 +48,7 @@ describe("DataCleaner", () => {
 
   it("should clean planet data into scraped planet object", async () => {
     mockResultData = mockPlanets;
-    const mockResidents = [["Anakin Skywalker"],["Luke Skywalker"]];
+    const mockResidents = [["Anakin Skywalker"], ["Luke Skywalker"]];
     const expected = {
       climate: undefined,
       name: undefined,

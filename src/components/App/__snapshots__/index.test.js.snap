@@ -30,7 +30,6 @@ exports[`App should match snapshot with background scroll in state  1`] = `
         "vehicles": null,
       }
     }
-    favorites={Array []}
     handlePage={[Function]}
     toggleFavorites={[Function]}
   />
@@ -64,7 +63,6 @@ exports[`App should match snapshot with default states 1`] = `
         "vehicles": null,
       }
     }
-    favorites={Array []}
     handlePage={[Function]}
     toggleFavorites={[Function]}
   />

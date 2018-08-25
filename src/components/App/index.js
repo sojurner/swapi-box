@@ -135,7 +135,6 @@ class App extends Component {
         <ContentRoute
           toggleFavorites={this.toggleFavorites}
           dataType={{people, planets, vehicles, favorites}}
-          favorites={favorites}
           handlePage={this.handlePage}
           activeButton={activeButton}
         />

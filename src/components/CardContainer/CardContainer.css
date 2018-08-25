@@ -2,7 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .favorites .previous-page-button,
@@ -13,18 +16,21 @@
 .previous-page-button,
 .next-page-button {
   cursor: pointer;
+  
+  border-radius: 10rem;
   position: absolute;
   opacity: 0.8rem;
-  top: 15rem;
-  border: none;
-  height: 8rem;
-  width: 10rem;
+  top: 19rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  outline: 0;
 }
 
 .next-page-button {
-  background: url("../../Icons/red-saber.svg") no-repeat center / 25%;
+  background: rgba(253, 214, 214, 0.397) url("../../Icons/red-saber.svg") no-repeat center / 65%;
+  border: 0.05rem solid red;
   position: fixed;
-  right: 1rem;
+  right: 2rem;
 }
 
 .next-page-button:hover {
@@ -33,9 +39,10 @@
 }
 
 .previous-page-button {
-  background: url("../../Icons/green-saber.svg") no-repeat center / 25%;
+  background: rgba(215, 253, 214, 0.397) url("../../Icons/green-saber.svg") no-repeat center / 65%;
+  border: 0.05rem solid green;
   position: fixed;
-  left: 1rem;
+  left: 2rem;
   transform: rotate(-90deg);
 }
 
@@ -50,3 +57,20 @@
   margin: 3rem;
 }
 
+@media only screen and (max-width: 400px) {
+  .card_container {
+    width: 70%;
+  }
+  .previous-page-button,
+  .next-page-button {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .next-page-button {
+    right: 0.5rem;
+  }
+  .previous-page-button {
+    left: 0.5rem;
+  }
+}

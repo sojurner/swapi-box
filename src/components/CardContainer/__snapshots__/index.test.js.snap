@@ -63,7 +63,7 @@ exports[`CardContainer should match snapshot with favorites and no data 1`] = `
   <p
     className="empty-fav"
   >
-    These are not the favorites you're looking for...
+    These are not the favorites you are looking for...
   </p>
 </section>
 `;

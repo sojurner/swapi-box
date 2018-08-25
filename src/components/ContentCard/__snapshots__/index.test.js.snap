@@ -107,9 +107,9 @@ exports[`ContentCard should match snapshot with Person favorite status true 3`] 
     wheeled
   </p>
   <p
-    key="numberof_passengers3"
+    key="number of passengers3"
   >
-    numberof_passengers
+    number of passengers
     : 
     30
   </p>
@@ -227,9 +227,9 @@ exports[`ContentCard should match snapshot with vehicle data object passed 1`] =
     wheeled
   </p>
   <p
-    key="numberof_passengers3"
+    key="number of passengers3"
   >
-    numberof_passengers
+    number of passengers
     : 
     30
   </p>

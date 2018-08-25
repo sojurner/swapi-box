@@ -17,7 +17,7 @@
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 1.5px 1.5px 1.5px transparent;
   border: 0.1rem solid rgb(111, 118, 104);
-  border-radius: 3px;
+  border-radius: .5rem;
   font-size: 2rem;
   font-family: equinox;
   letter-spacing: 3px;
@@ -38,12 +38,13 @@
 @media only screen and (max-width: 400px) {
   .navigation_bar {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
   .CONTAINER {
-    margin: 0.5rem 0;
+    margin: 0.6rem 0;
   }
   .NAV {
-    padding-right: 20vw;
+    font-size: 1rem;
   }
 }

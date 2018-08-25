@@ -7,12 +7,11 @@ import { CardContainer } from "../CardContainer";
 
 export const ContentRoute = ({
   toggleFavorites,
-  favorites,
   handlePage,
   dataType,
   activeButton
 }) => {
-  const savedFavorites = favorites.map(favorite => favorite.name);
+  const savedFavorites = dataType.favorites.map(favorite => favorite.name);
   return (
     <Switch>
       <Route exact path='/' component={HomePage} />
@@ -39,35 +38,40 @@ export const ContentRoute = ({
 const { arrayOf, object, func, string, bool, shape } = PropTypes;
 
 ContentRoute.propTypes = {
-  planets: arrayOf(
+  dataType: arrayOf(
     shape({
-      climate: string,
-      favorite: bool,
-      name: string,
-      populaton: string,
-      residents: arrayOf(string),
-      terrain: string
+      planets: arrayOf(
+        shape({
+          climate: string,
+          favorite: bool,
+          name: string,
+          populaton: string,
+          residents: arrayOf(string),
+          terrain: string
+        })
+      ),
+      people: arrayOf(
+        shape({
+          favorite: bool,
+          homeworld: string,
+          name: string,
+          population: string,
+          species: string
+        })
+      ),
+      vehicle: arrayOf(
+        shape({
+          class: string,
+          favorite: bool,
+          model: string,
+          name: string,
+          'number of passengers': string
+        })
+      ),
+      favorites: arrayOf(object)
     })
   ),
-  people: arrayOf(
-    shape({
-      favorite: bool,
-      homeworld: string,
-      name: string,
-      population: string,
-      species: string
-    })
-  ),
-  vehicles: arrayOf(
-    shape({
-      class: string,
-      favorite: bool,
-      model: string,
-      name: string,
-      numberof_passengers: string
-    })
-  ),
-  favorites: arrayOf(object),
   handlePage: func,
-  toggleFavorites: func
+  toggleFavorites: func,
+  activeButton: string
 };

@@ -31,7 +31,7 @@ describe("ContentCard", () => {
       name: "Sand Crawler",
       model: "Digger Crawler",
       class: "wheeled",
-      numberof_passengers: "30",
+      'number of passengers': "30",
       favorite: false
     };
 
@@ -109,7 +109,7 @@ describe("ContentCard", () => {
       name: "Sand Crawler",
       model: "Digger Crawler",
       class: "wheeled",
-      numberof_passengers: "30",
+      'number of passengers': "30",
       favorite: true
     };
 
