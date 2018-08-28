@@ -136,3 +136,4 @@ describe("ContentCard", () => {
     expect(mockToggleFavorites).toHaveBeenCalled();
   });
 });
+/* global shallow */

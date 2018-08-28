@@ -220,3 +220,4 @@ describe("App", () => {
     });
   });
 });
+/* global shallow */

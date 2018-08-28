@@ -25,18 +25,9 @@ export const NavBar = ({ getData, favorites }) => {
   );
 };
 
-const { func, string, shape, arrayOf, bool } = PropTypes;
+const { func, array } = PropTypes;
 
 NavBar.propTypes = {
   getData: func,
-  pressed: string,
-  favorites: arrayOf(
-    shape({
-      class: string,
-      favorite: bool,
-      model: string,
-      name: string,
-      'number of passengers': string
-    })
-  )
+  favorites: array
 };

@@ -35,42 +35,40 @@ export const ContentRoute = ({
   );
 };
 
-const { arrayOf, object, func, string, bool, shape } = PropTypes;
+const { arrayOf, array, func, string, bool, shape } = PropTypes;
 
 ContentRoute.propTypes = {
-  dataType: arrayOf(
-    shape({
-      planets: arrayOf(
-        shape({
-          climate: string,
-          favorite: bool,
-          name: string,
-          populaton: string,
-          residents: arrayOf(string),
-          terrain: string
-        })
-      ),
-      people: arrayOf(
-        shape({
-          favorite: bool,
-          homeworld: string,
-          name: string,
-          population: string,
-          species: string
-        })
-      ),
-      vehicle: arrayOf(
-        shape({
-          class: string,
-          favorite: bool,
-          model: string,
-          name: string,
-          'number of passengers': string
-        })
-      ),
-      favorites: arrayOf(object)
-    })
-  ),
+  dataType: shape({
+    planets: arrayOf(
+      shape({
+        climate: string,
+        favorite: bool,
+        name: string,
+        populaton: string,
+        residents: arrayOf(string),
+        terrain: string
+      })
+    ),
+    people: arrayOf(
+      shape({
+        favorite: bool,
+        homeworld: string,
+        name: string,
+        population: string,
+        species: string
+      })
+    ),
+    vehicle: arrayOf(
+      shape({
+        class: string,
+        favorite: bool,
+        model: string,
+        name: string,
+        'number of passengers': string
+      })
+    ),
+    favorites: array
+  }),
   handlePage: func,
   toggleFavorites: func,
   activeButton: string

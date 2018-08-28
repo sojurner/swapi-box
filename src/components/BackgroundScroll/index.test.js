@@ -20,3 +20,4 @@ describe("BackgroundScroll", () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+/* global shallow */

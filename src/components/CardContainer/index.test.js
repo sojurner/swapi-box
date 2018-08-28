@@ -104,3 +104,4 @@ describe("CardContainer", () => {
     expect(mockHandlePage).toHaveBeenCalled();
   });
 });
+/* global shallow */

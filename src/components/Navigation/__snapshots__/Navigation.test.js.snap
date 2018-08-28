@@ -1,238 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContentRoute should match snapshot with data object passed 1`] = `undefined`;
-
-exports[`ContentRoute should match snapshot without data object passed 1`] = `undefined`;
-
-exports[`NavBar should match snapshot when activeButton is favorites 1`] = `
-<div
-  className="navigation_bar"
->
-  <div
-    className="CONTAINER"
-    key="0"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="planets"
-      onClick={[Function]}
-      to="/planets"
-    >
-      planets
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="1"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="people"
-      onClick={[Function]}
-      to="/people"
-    >
-      people
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="2"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="vehicles"
-      onClick={[Function]}
-      to="/vehicles"
-    >
-      vehicles
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="3"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="favorites"
-      onClick={[Function]}
-      to="/favorites"
-    >
-      favorites
-       
-      0
-    </NavLink>
-  </div>
-</div>
+exports[`ContentRoute should match snapshot with the / path 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+</Switch>
 `;
 
-exports[`NavBar should match snapshot when activeButton is people 1`] = `
-<div
-  className="navigation_bar"
->
-  <div
-    className="CONTAINER"
-    key="0"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="planets"
-      onClick={[Function]}
-      to="/planets"
-    >
-      planets
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="1"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="people"
-      onClick={[Function]}
-      to="/people"
-    >
-      people
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="2"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="vehicles"
-      onClick={[Function]}
-      to="/vehicles"
-    >
-      vehicles
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="3"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="favorites"
-      onClick={[Function]}
-      to="/favorites"
-    >
-      favorites
-       
-      0
-    </NavLink>
-  </div>
-</div>
+exports[`ContentRoute should match snapshot with the /favorites path and no favorite objects 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/favorites"
+    render={[Function]}
+  />
+</Switch>
 `;
 
-exports[`NavBar should match snapshot when activeButton is planets 1`] = `
-<div
-  className="navigation_bar"
->
-  <div
-    className="CONTAINER"
-    key="0"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="planets"
-      onClick={[Function]}
-      to="/planets"
-    >
-      planets
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="1"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="people"
-      onClick={[Function]}
-      to="/people"
-    >
-      people
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="2"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="vehicles"
-      onClick={[Function]}
-      to="/vehicles"
-    >
-      vehicles
-       
-    </NavLink>
-  </div>
-  <div
-    className="CONTAINER"
-    key="3"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="NAV"
-      exact={true}
-      name="favorites"
-      onClick={[Function]}
-      to="/favorites"
-    >
-      favorites
-       
-      0
-    </NavLink>
-  </div>
-</div>
+exports[`ContentRoute should match snapshot with the /favorites path with favorites data 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/favorites"
+    render={[Function]}
+  />
+</Switch>
 `;
 
-exports[`NavBar should match snapshot when activeButton is vehicles 1`] = `
+exports[`ContentRoute should match snapshot with the /people path 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/people"
+    render={[Function]}
+  />
+</Switch>
+`;
+
+exports[`ContentRoute should match snapshot with the /planets path 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    exact={true}
+    path="/planets"
+    render={[Function]}
+  />
+</Switch>
+`;
+
+exports[`NavBar should match snapshot 1`] = `
 <div
   className="navigation_bar"
 >

@@ -21,12 +21,12 @@ export const FetchApi = async (type, page = "") => {
 export const fetchSpecific = async (type, result) => {
   let compiledData;
   switch (type) {
-    case "films":
+    case "films": {
       const films = await filmScrape(result);
       compiledData = films;
       break;
-
-    case "people":
+    }
+    case "people": {
       const speciesResult = await fetch(result.species[0]);
       const species = await speciesResult.json();
       const homeworldResult = await fetch(result.homeworld);
@@ -34,8 +34,8 @@ export const fetchSpecific = async (type, result) => {
       const peopleObj = await peopleScrape(result, species, homeworld);
       compiledData = peopleObj;
       break;
-
-    case "planets":
+    }
+    case "planets": {
       const residents = result.residents.map(async residentUrl => {
         const resident = await fetchResidents(residentUrl);
         return resident.name;
@@ -44,13 +44,15 @@ export const fetchSpecific = async (type, result) => {
       const planetObj = await planetScrape(result, resolvedResidents);
       compiledData = planetObj;
       break;
-
-    case "vehicles":
+    }
+    case "vehicles": {
       const vehicleObj = await vehicleScrape(result);
       compiledData = vehicleObj;
       break;
-    default:
+    }
+    default: {
       return undefined;
+    }
   }
   return compiledData;
 };

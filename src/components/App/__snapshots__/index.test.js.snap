@@ -15,10 +15,8 @@ exports[`App should match snapshot with background scroll in state  1`] = `
     dont="stop"
   />
   <Component
-    activeButton="films"
     favorites={Array []}
     getData={[Function]}
-    pressed="films"
   />
   <Component
     activeButton="films"
@@ -48,10 +46,8 @@ exports[`App should match snapshot with default states 1`] = `
     </h1>
   </header>
   <Component
-    activeButton="films"
     favorites={Array []}
     getData={[Function]}
-    pressed="films"
   />
   <Component
     activeButton="films"
