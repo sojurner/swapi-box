@@ -17,4 +17,4 @@ SWAPI Box is a paired project designed to challenge my skills at manipulating da
 https://tomkingkong.github.io/swapi-box/
 
 ## Functionality
-<img src="https://raw.githubusercontent.com/tomkingkong/swapi-box/master/public/swapi-box-interaction-1.gif" width="600px" />
+![tron](https://user-images.githubusercontent.com/35910428/47128601-27fde480-d24f-11e8-8c00-47a6822c5804.gif)
