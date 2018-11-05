@@ -29,4 +29,4 @@ Clone down this Repo
 
 
 ### Contributors
-[Tom King](https://github.com/tomkingkong)
+* [Tom King](https://github.com/tomkingkong)
