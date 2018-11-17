@@ -1,28 +1,31 @@
-import React, { Component } from "react";
-import { NavBar } from "../Navigation/NavBar";
-import { ContentRoute } from "../Navigation/ContentRoute";
-import { FetchApi } from "../Fetch/FetchApi";
-import { BackgroundScroll } from "../BackgroundScroll";
-import "./App.css";
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavBar from '../Navigation/NavBar';
+
+import ContentRoute from '../Navigation/ContentRoute';
+import * as fetch from '../../helpers/api_calls/apiCalls';
+import { BackgroundScroll } from '../BackgroundScroll';
+import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      activeButton: "",
+      activeButton: '',
       pageCounter: 1,
+      navDisplay: false,
       films: null,
       backgroundFilm: null,
       planets: null,
       people: null,
       vehicles: null,
       favorites: [],
-      errorStatus: ""
+      errorStatus: ''
     };
   }
 
   async componentDidMount() {
-    const backgroundScroll = { target: { name: "films" } };
+    const backgroundScroll = { target: { name: 'films' } };
     await this.getData(backgroundScroll);
     this.setRandomFilm();
     this.setFavoritesFromStorage();
@@ -38,28 +41,30 @@ class App extends Component {
 
   getData = async (event, page) => {
     const newPage = page;
-    let selectedData = event.target.name;
-    this.setButtonPressed(selectedData);
+    let { name } = event.target;
+    this.setButtonPressed(name);
     let alreadyHasData =
-      this.state[selectedData] !== null || this.state[selectedData]
-        ? true
-        : false;
+      this.state[name] !== null || this.state[name] ? true : false;
     if (page !== 1) {
       alreadyHasData = false;
     }
 
     if (alreadyHasData) return;
     try {
-      const result = await FetchApi(selectedData, newPage);
-      this.setState({ [selectedData]: result });
+      const result = await fetch.FetchApi(name, newPage);
+      this.setState({ [name]: result });
     } catch (error) {
       this.setState({ errorStatus: error.message });
     }
   };
 
-  setButtonPressed = string => {
-    if (string !== this.state.activeButton) {
-      this.setState({ activeButton: string, pageCounter: 1 });
+  getDetails = async (url, type) => {
+    return await fetch.fetchDetails(url);
+  };
+
+  setButtonPressed = activeButton => {
+    if (activeButton !== this.state.activeButton) {
+      this.setState({ activeButton, pageCounter: 1 });
     }
   };
 
@@ -79,7 +84,7 @@ class App extends Component {
       );
     }
     this.setState({ favorites });
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    localStorage.setItem('favorites', JSON.stringify(favorites));
   };
 
   handlePage = async boolean => {
@@ -89,10 +94,10 @@ class App extends Component {
 
     switch (boolean) {
       case true:
-        !pageCount ? pageCount = 2 : pageCount++;
+        !pageCount ? (pageCount = 2) : pageCount++;
         break;
       case false:
-        pageCount > 2 ?  pageCount--  : pageCount = "";
+        pageCount > 2 ? pageCount-- : (pageCount = '');
         break;
       default:
         return;
@@ -103,11 +108,15 @@ class App extends Component {
   };
 
   setFavoritesFromStorage = () => {
-    if (localStorage.getItem("favorites")) {
-      const favorites = JSON.parse(localStorage.getItem("favorites"));
+    if (localStorage.getItem('favorites')) {
+      const favorites = JSON.parse(localStorage.getItem('favorites'));
       this.setState({ favorites });
     }
     return;
+  };
+
+  handleClick = () => {
+    this.setState({ navDisplay: !this.state.navDisplay });
   };
 
   render() {
@@ -116,27 +125,45 @@ class App extends Component {
       planets,
       vehicles,
       favorites,
+      films,
       backgroundFilm,
-      activeButton
+      activeButton,
+      navDisplay
     } = this.state;
 
     return (
-      <div className={`${activeButton} App`}>
-        <header className="App__TITLE">
-          <h1>SWAPI BOX</h1>
-        </header>
-        {backgroundFilm && <BackgroundScroll {...backgroundFilm} />}
-        <NavBar
-          getData={this.getData}
-          favorites={favorites}
-        />
-        <ContentRoute
-          toggleFavorites={this.toggleFavorites}
-          dataType={{people, planets, vehicles, favorites}}
-          handlePage={this.handlePage}
-          activeButton={activeButton}
-        />
-      </div>
+      <Router>
+        <div className={`${activeButton} App`}>
+          <header className="App__TITLE">
+            <h1>SWAPI BOX</h1>
+          </header>
+          {backgroundFilm && <BackgroundScroll {...backgroundFilm} />}
+          {
+            <i
+              className={
+                !navDisplay
+                  ? `fab fa-galactic-republic`
+                  : `fas fa-chevron-circle-left`
+              }
+              onClick={this.handleClick}
+            />
+          }
+          {navDisplay && (
+            <NavBar
+              getData={this.getData}
+              favorites={favorites}
+              state={this.state}
+            />
+          )}
+          <ContentRoute
+            getDetails={this.getDetails}
+            toggleFavorites={this.toggleFavorites}
+            dataType={{ films, people, planets, vehicles, favorites }}
+            handlePage={this.handlePage}
+            activeButton={activeButton}
+          />
+        </div>
+      </Router>
     );
   }
 }
