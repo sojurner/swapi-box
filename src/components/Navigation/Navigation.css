@@ -1,38 +1,49 @@
 .navigation_bar {
+  position: absolute;
   display: flex;
   background: rgba(61, 61, 61, 0.6);
-  flex-wrap: wrap;
-  justify-content: space-around;
-  position: sticky;
-  top: 0rem;
+  flex-direction: column;
+  top: 0;
   z-index: 10;
+  height: 100vh;
+  width: 16.5rem;
+  padding-top: 6rem;
+  animation: slideInLeft 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .CONTAINER {
-  margin: 1rem 0;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .NAV {
   color: white;
-  background: rgba(255, 255, 255, 0.6);
   box-shadow: 1.5px 1.5px 1.5px transparent;
-  border: 0.1rem solid rgb(111, 118, 104);
-  border-radius: .5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: equinox;
   letter-spacing: 3px;
   text-decoration: none;
-  padding: 0.6rem;
+  padding: 1rem;
 }
 
-.NAV:hover {
+.CONTAINER:hover {
+  border-left: 2px solid;
   background: rgb(117, 116, 116);
   box-shadow: 1.5px 1.5px 1.5px #ccc;
   font-family: equinox-bold;
 }
 
+.fa-film,
+.fa-jedi-order,
+.fa-globe,
+.fa-galactic-senate,
+.fa-old-republic,
+.fa-star-half-alt {
+  margin-right: 0.7rem;
+  font-size: 1.3rem;
+}
+
 .active {
-  background: silver;
 }
 
 @media only screen and (max-width: 400px) {
@@ -46,5 +57,18 @@
   }
   .NAV {
     font-size: 1rem;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
