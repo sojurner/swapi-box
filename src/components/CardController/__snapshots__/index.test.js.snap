@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should match snapshot with data object passed 1`] = `
+<section
+  className="card_container"
+>
+  <Component
+    card={
+      Object {
+        "favorite": false,
+        "homeworld": "Tatooine",
+        "name": "Luke Skywalker",
+        "population": "200000",
+        "species": "Human",
+      }
+    }
+    key="0"
+    toggleFavorites={[Function]}
+  />
+  <button
+    className="previous-page-button"
+    onClick={[Function]}
+  />
+  <button
+    className="next-page-button"
+    onClick={[Function]}
+  />
+</section>
+`;
+
+exports[`CardContainer should match snapshot with favorites and data 1`] = `
+<section
+  className="favorites card_container"
+>
+  <Component
+    card={
+      Object {
+        "favorite": true,
+        "homeworld": "Tatooine",
+        "name": "Luke Skywalker",
+        "population": "200000",
+        "species": "Human",
+      }
+    }
+    key="0"
+    toggleFavorites={[Function]}
+  />
+  <button
+    className="previous-page-button"
+    onClick={[Function]}
+  />
+  <button
+    className="next-page-button"
+    onClick={[Function]}
+  />
+</section>
+`;
+
+exports[`CardContainer should match snapshot with favorites and no data 1`] = `
+<section
+  className="card_container"
+>
+  <p
+    className="empty-fav"
+  >
+    These are not the favorites you are looking for...
+  </p>
+</section>
+`;
+
+exports[`CardContainer should match snapshot without data object passed 1`] = `
+<section
+  className="card_container"
+>
+  <img
+    height="100px"
+    src="https://media2.giphy.com/media/10MKHgkZMDlQ4M/giphy.gif"
+    width="100px"
+  />
+</section>
+`;
