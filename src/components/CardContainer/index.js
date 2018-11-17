@@ -1,46 +1,49 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./CardContainer.css";
-import { ContentCard } from "../ContentCard";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { CardContent } from '../CardContent';
+import './CardContainer.css';
+import * as clean from '../../helpers/data_cleaner/dataCleaner';
 
 export const CardContainer = ({
-  data,
+  cardDetails,
+  activeType,
   toggleFavorites,
-  savedFavorites,
-  handlePage,
-  isFavorites
+  selectCard,
+  selectedCard
 }) => {
-
-  if (isFavorites && !data.length) { 
+  const content = cardDetails.map((item, index) => {
+    const data = clean.characterScrape(item);
     return (
-      <section className="card_container">
-        <p className="empty-fav">These are not the favorites you are looking for...</p>
-      </section>);
-  }
-  if (!data) return (<section className="card_container"><img src="https://media2.giphy.com/media/10MKHgkZMDlQ4M/giphy.gif" width="100px" height="100px"/></section>);
-  
-  const cards = data.map((card, index) => {
-    card.favorite = savedFavorites.includes(card.name);
-    return (
-      <ContentCard key={index} card={card} toggleFavorites={toggleFavorites} />
+      <CardContent
+        key={`content-${index}`}
+        activeType={activeType}
+        selectedCard={selectedCard}
+        selectCard={selectCard}
+        data={data}
+      />
     );
   });
 
+  //   if (key === 'favorite') return;
+  //   return key === 'name' ? (
+  //     <h1 key={key + i}>{card[key]}</h1>
+  //   ) : (
+  //     <p key={key + i}>
+  //       {key}: {card[key]}
+  //     </p>
+  //   );
+  // });
   return (
-    <section className={isFavorites ? "favorites card_container" : "card_container"}>
-      {cards && cards}
-      <button className="previous-page-button" onClick={() => handlePage(false)} />
-      <button className="next-page-button" onClick={() => handlePage(true)} />
-    </section>
+    <article className="content_card">
+      {content}
+      {/* <button className="button" onClick={() => toggleFavorites(card)} /> */}
+    </article>
   );
 };
 
-const { arrayOf, func, object, string, bool } = PropTypes;
+const { object, func } = PropTypes;
 
 CardContainer.propTypes = {
-  data: arrayOf(object),
-  savedFavorites: arrayOf(string),
-  toggleFavorites: func,
-  handlePage: func,
-  isFavorites: bool
+  card: object,
+  toggleFavorites: func
 };
