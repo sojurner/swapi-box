@@ -1,0 +1,5 @@
+.selected-card {
+  border: 1px solid white;
+  width: 15rem;
+  background-color: rgba(128, 128, 128, 0.523);
+}
