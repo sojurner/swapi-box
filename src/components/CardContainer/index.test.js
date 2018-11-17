@@ -1,107 +1,139 @@
 import React from "react";
 
-import { CardContainer } from "./index";
+import { ContentCard } from "./index";
 
-describe("CardContainer", () => {
+describe("ContentCard", () => {
   let wrapper;
-  let mockData;
-  let toggleFavorites;
-  let savedFavorites;
-  let handlePage;
+  let mockPersonData;
+  let mockPlanetData;
+  let mockVehicleData;
+  let mockToggleFavorites;
 
   beforeEach(() => {
-    mockData = [
-      {
-        name: "Luke Skywalker",
-        species: "Human",
-        homeworld: "Tatooine",
-        population: "200000",
-        favorite: false
-      }
-    ];
-    toggleFavorites = jest.fn();
-    savedFavorites = [];
-    handlePage = jest.fn();
+    mockPersonData = {
+      name: "Luke Skywalker",
+      species: "Human",
+      homeworld: "Tatooine",
+      population: "200000",
+      favorite: false
+    };
+
+    mockPlanetData = {
+      climate: "temperate",
+      favorite: false,
+      name: "Alderaan",
+      populaton: "2000000000",
+      residents: ["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"],
+      terrain: "grasslands, mountains"
+    };
+
+    mockVehicleData = {
+      name: "Sand Crawler",
+      model: "Digger Crawler",
+      class: "wheeled",
+      'number of passengers': "30",
+      favorite: false
+    };
+
+    mockToggleFavorites = jest.fn();
 
     wrapper = shallow(
-      <CardContainer
-        data={mockData}
-        handlePage={handlePage}
-        toggleFavorites={toggleFavorites}
-        savedFavorites={savedFavorites}
-        isFavorites={false}
+      <ContentCard
+        key={0}
+        card={mockPersonData}
+        toggleFavorites={mockToggleFavorites}
       />
     );
   });
 
-  it("should match snapshot with data object passed", () => {
+  it("should match snapshot with people data object passed", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should match snapshot without data object passed", () => {
-    mockData = null;
+  it("should match snapshot with planet data object passed", () => {
     wrapper = shallow(
-      <CardContainer
-        data={mockData}
-        handlePage={handlePage}
-        toggleFavorites={toggleFavorites}
-        savedFavorites={savedFavorites}
-        isFavorites={false}
-      />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should match snapshot with favorites and data", () => {
-    savedFavorites = ["Luke Skywalker"];
-    wrapper = shallow(
-      <CardContainer
-        data={mockData}
-        handlePage={handlePage}
-        toggleFavorites={toggleFavorites}
-        savedFavorites={savedFavorites}
-        isFavorites={true}
+      <ContentCard
+        key={0}
+        card={mockPlanetData}
+        toggleFavorites={mockToggleFavorites}
       />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should match snapshot with favorites and no data", () => {
-    savedFavorites = ["Luke Skywalker"];
+  it("should match snapshot with vehicle data object passed", () => {
     wrapper = shallow(
-      <CardContainer
-        data={[]}
-        handlePage={handlePage}
-        toggleFavorites={toggleFavorites}
-        savedFavorites={savedFavorites}
-        isFavorites={true}
+      <ContentCard
+        key={0}
+        card={mockVehicleData}
+        toggleFavorites={mockToggleFavorites}
       />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should call handlePage on click", () => {
-    let mockHandlePage = jest.fn();
+  it("should match snapshot with Person favorite status true", () => {
+    mockPersonData = {
+      name: "Luke Skywalker",
+      species: "Human",
+      homeworld: "Tatooine",
+      population: "200000",
+      favorite: true
+    };
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should match snapshot with Person favorite status true", () => {
+    mockPlanetData = {
+      climate: "temperate",
+      favorite: true,
+      name: "Alderaan",
+      populaton: "2000000000",
+      residents: ["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"],
+      terrain: "grasslands, mountains"
+    };
 
     wrapper = shallow(
-      <CardContainer
-        data={mockData}
-        handlePage={mockHandlePage}
-        toggleFavorites={toggleFavorites}
-        savedFavorites={savedFavorites}
+      <ContentCard
+        key={0}
+        card={mockPlanetData}
+        toggleFavorites={mockToggleFavorites}
       />
     );
-    wrapper
-      .find(".previous-page-button")
-      .first()
-      .simulate("click");
-    expect(mockHandlePage).toHaveBeenCalled();
 
-    wrapper
-      .find(".next-page-button")
-      .first()
-      .simulate("click");
-    expect(mockHandlePage).toHaveBeenCalled();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should match snapshot with Person favorite status true", () => {
+    mockVehicleData = {
+      name: "Sand Crawler",
+      model: "Digger Crawler",
+      class: "wheeled",
+      'number of passengers': "30",
+      favorite: true
+    };
+
+    wrapper = shallow(
+      <ContentCard
+        key={0}
+        card={mockVehicleData}
+        toggleFavorites={mockToggleFavorites}
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should call toggleFavorites on click", () => {
+    mockToggleFavorites = jest.fn();
+    wrapper = shallow(
+      <ContentCard
+        toggleFavorites={mockToggleFavorites}
+        card={mockPersonData}
+        key={"0"}
+      />
+    );
+    wrapper.find("button").simulate("click");
+    expect(mockToggleFavorites).toHaveBeenCalled();
   });
 });
 /* global shallow */
