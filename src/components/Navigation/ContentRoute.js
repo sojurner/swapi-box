@@ -1,27 +1,42 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { HomePage } from '../HomePage';
-import { CardContainer } from "../CardContainer";
+import { CardController } from '../CardController';
 
-export const ContentRoute = ({
-  toggleFavorites,
-  handlePage,
-  dataType,
-  activeButton
-}) => {
-  const savedFavorites = dataType.favorites.map(favorite => favorite.name);
-  return (
-    <Switch>
-      <Route exact path='/' component={HomePage} />
+class ContentRoute extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contentRoute: this.props.activeButton,
+      breadCrumbs: null
+    };
+  }
+
+  render() {
+    const {
+      toggleFavorites,
+      handlePage,
+      dataType,
+      activeButton,
+      getMovieDetails
+    } = this.props;
+    console.log(dataType);
+    console.log(activeButton);
+
+    const savedFavorites = dataType.favorites.map(favorite => favorite.name);
+
+    const contentRoute = (
       <Route
-        exact path={`/${activeButton}`}
-        render={({match}) => {
+        path={`/${activeButton}`}
+        render={({ match, history }) => {
           const { path } = match;
           const chosenPath = path.slice(1);
           return (
-            <CardContainer
+            <CardController
+              getDetails={this.getDetails}
+              path={chosenPath}
               data={dataType[chosenPath]}
               handlePage={handlePage}
               toggleFavorites={toggleFavorites}
@@ -31,10 +46,15 @@ export const ContentRoute = ({
           );
         }}
       />
-    </Switch>
-  );
-};
-
+    );
+    return (
+      <div>
+        <Route exact path="/" component={HomePage} />
+        {contentRoute}
+      </div>
+    );
+  }
+}
 const { arrayOf, array, func, string, bool, shape } = PropTypes;
 
 ContentRoute.propTypes = {
@@ -73,3 +93,5 @@ ContentRoute.propTypes = {
   toggleFavorites: func,
   activeButton: string
 };
+
+export default ContentRoute;
