@@ -35,7 +35,7 @@
   position: relative;
   top: 9999px;
   transform-origin: 50% 50%;
-  animation: crawl 35s linear;
+  animation: crawl 70s linear;
 }
 
 .Background__Crawl > .Background__Title {
