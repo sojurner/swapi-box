@@ -16,5 +16,17 @@ SWAPI Box is a paired project designed to challenge my skills at manipulating da
 ## Demo 
 https://tomkingkong.github.io/swapi-box/
 
+## Set-up
+Clone down this Repo
+
+* Install dependencies: `npm install`
+* Start Server: `npm start`
+* Run Testing Suite: `npm test`
+* Run EsLint: `npm eslint`
+
 ## Functionality
-<img src="https://raw.githubusercontent.com/tomkingkong/swapi-box/master/public/swapi-box-interaction-1.gif" width="600px" />
+![swapibox](https://user-images.githubusercontent.com/35910428/47128634-4ebc1b00-d24f-11e8-88c7-ed3b69459709.gif)
+
+
+### Contributors
+* [Tom King](https://github.com/tomkingkong)
