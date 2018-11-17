@@ -1,81 +1,241 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardContainer should match snapshot with data object passed 1`] = `
-<section
-  className="card_container"
+exports[`ContentCard should match snapshot with Person favorite status true 1`] = `
+<article
+  className="content_card"
 >
-  <Component
-    card={
-      Object {
-        "favorite": false,
-        "homeworld": "Tatooine",
-        "name": "Luke Skywalker",
-        "population": "200000",
-        "species": "Human",
-      }
-    }
-    key="0"
-    toggleFavorites={[Function]}
-  />
+  <h1
+    key="name0"
+  >
+    Luke Skywalker
+  </h1>
+  <p
+    key="species1"
+  >
+    species
+    : 
+    Human
+  </p>
+  <p
+    key="homeworld2"
+  >
+    homeworld
+    : 
+    Tatooine
+  </p>
+  <p
+    key="population3"
+  >
+    population
+    : 
+    200000
+  </p>
   <button
-    className="previous-page-button"
+    className="button"
     onClick={[Function]}
   />
-  <button
-    className="next-page-button"
-    onClick={[Function]}
-  />
-</section>
+</article>
 `;
 
-exports[`CardContainer should match snapshot with favorites and data 1`] = `
-<section
-  className="favorites card_container"
->
-  <Component
-    card={
-      Object {
-        "favorite": true,
-        "homeworld": "Tatooine",
-        "name": "Luke Skywalker",
-        "population": "200000",
-        "species": "Human",
-      }
-    }
-    key="0"
-    toggleFavorites={[Function]}
-  />
-  <button
-    className="previous-page-button"
-    onClick={[Function]}
-  />
-  <button
-    className="next-page-button"
-    onClick={[Function]}
-  />
-</section>
-`;
-
-exports[`CardContainer should match snapshot with favorites and no data 1`] = `
-<section
-  className="card_container"
+exports[`ContentCard should match snapshot with Person favorite status true 2`] = `
+<article
+  className="content_card favorite"
 >
   <p
-    className="empty-fav"
+    key="climate0"
   >
-    These are not the favorites you are looking for...
+    climate
+    : 
+    temperate
   </p>
-</section>
+  <h1
+    key="name2"
+  >
+    Alderaan
+  </h1>
+  <p
+    key="populaton3"
+  >
+    populaton
+    : 
+    2000000000
+  </p>
+  <p
+    key="residents4"
+  >
+    residents
+    : 
+    Leia Organa
+    Bail Prestor Organa
+    Raymus Antilles
+  </p>
+  <p
+    key="terrain5"
+  >
+    terrain
+    : 
+    grasslands, mountains
+  </p>
+  <button
+    className="button"
+    onClick={[Function]}
+  />
+</article>
 `;
 
-exports[`CardContainer should match snapshot without data object passed 1`] = `
-<section
-  className="card_container"
+exports[`ContentCard should match snapshot with Person favorite status true 3`] = `
+<article
+  className="content_card favorite"
 >
-  <img
-    height="100px"
-    src="https://media2.giphy.com/media/10MKHgkZMDlQ4M/giphy.gif"
-    width="100px"
+  <h1
+    key="name0"
+  >
+    Sand Crawler
+  </h1>
+  <p
+    key="model1"
+  >
+    model
+    : 
+    Digger Crawler
+  </p>
+  <p
+    key="class2"
+  >
+    class
+    : 
+    wheeled
+  </p>
+  <p
+    key="number of passengers3"
+  >
+    number of passengers
+    : 
+    30
+  </p>
+  <button
+    className="button"
+    onClick={[Function]}
   />
-</section>
+</article>
+`;
+
+exports[`ContentCard should match snapshot with people data object passed 1`] = `
+<article
+  className="content_card"
+>
+  <h1
+    key="name0"
+  >
+    Luke Skywalker
+  </h1>
+  <p
+    key="species1"
+  >
+    species
+    : 
+    Human
+  </p>
+  <p
+    key="homeworld2"
+  >
+    homeworld
+    : 
+    Tatooine
+  </p>
+  <p
+    key="population3"
+  >
+    population
+    : 
+    200000
+  </p>
+  <button
+    className="button"
+    onClick={[Function]}
+  />
+</article>
+`;
+
+exports[`ContentCard should match snapshot with planet data object passed 1`] = `
+<article
+  className="content_card"
+>
+  <p
+    key="climate0"
+  >
+    climate
+    : 
+    temperate
+  </p>
+  <h1
+    key="name2"
+  >
+    Alderaan
+  </h1>
+  <p
+    key="populaton3"
+  >
+    populaton
+    : 
+    2000000000
+  </p>
+  <p
+    key="residents4"
+  >
+    residents
+    : 
+    Leia Organa
+    Bail Prestor Organa
+    Raymus Antilles
+  </p>
+  <p
+    key="terrain5"
+  >
+    terrain
+    : 
+    grasslands, mountains
+  </p>
+  <button
+    className="button"
+    onClick={[Function]}
+  />
+</article>
+`;
+
+exports[`ContentCard should match snapshot with vehicle data object passed 1`] = `
+<article
+  className="content_card"
+>
+  <h1
+    key="name0"
+  >
+    Sand Crawler
+  </h1>
+  <p
+    key="model1"
+  >
+    model
+    : 
+    Digger Crawler
+  </p>
+  <p
+    key="class2"
+  >
+    class
+    : 
+    wheeled
+  </p>
+  <p
+    key="number of passengers3"
+  >
+    number of passengers
+    : 
+    30
+  </p>
+  <button
+    className="button"
+    onClick={[Function]}
+  />
+</article>
 `;
