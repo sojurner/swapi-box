@@ -1,76 +1,77 @@
-.card_container {
+.content_card {
+  /* top: 3rem; */
+  position: absolute;
+  left: 0;
+  background: rgba(141, 141, 141, 0.699);
+  border-radius: 0.3rem;
+  border: 0.2rem solid #d3d3d3;
+  padding: 0 0.8rem;
+  /* overflow: scroll; */
+  margin: 0.5rem;
+  min-width: 31rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  width: 80%;
-  min-height: 100vh;
-  height: 100%;
+  width: 50%;
 }
 
-.favorites .previous-page-button,
-.favorites .next-page-button { 
-  display: none;
+.content_card h1 {
+  animation: fade 0.7s ease-in;
+  color: white;
+  margin: 0.5rem 0 2rem 0;
 }
 
-.previous-page-button,
-.next-page-button {
+.content_card p {
+  color: antiquewhite;
+  font-family: equinox-bold;
+  animation: fade 0.5s ease-out;
+  animation: fade 0.5s ease-in;
+}
+
+.content_card button {
   cursor: pointer;
-  
-  border-radius: 10rem;
+  background: url('../../Icons/deathstar-white.svg') no-repeat;
+  border: none;
+  outline: none;
   position: absolute;
-  opacity: 0.8rem;
-  top: 19rem;
-  height: 3.2rem;
-  width: 3.2rem;
-  outline: 0;
+  top: 0;
+  right: 0;
+  margin: 0.4rem;
+  width: 2rem;
+  height: 2rem;
 }
-
-.next-page-button {
-  background: rgba(253, 214, 214, 0.397) url("../../Icons/red-saber.svg") no-repeat center / 65%;
-  border: 0.05rem solid red;
-  position: fixed;
-  right: 2rem;
-}
-
-.next-page-button:hover {
+.content_card button:hover {
+  background: url('../../Icons/deathstar-black.svg') no-repeat;
   transform: rotate(45deg);
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
 }
 
-.previous-page-button {
-  background: rgba(215, 253, 214, 0.397) url("../../Icons/green-saber.svg") no-repeat center / 65%;
-  border: 0.05rem solid green;
-  position: fixed;
-  left: 2rem;
-  transform: rotate(-90deg);
+.favorite {
+  background: rgb(86, 90, 94);
 }
 
-.previous-page-button:hover {
-  transform: rotate(-135deg);
-  transition: all 0.5s linear;
+.favorite button {
+  background: url('../../Icons/deathstar-black.svg') no-repeat;
 }
 
-.empty-fav {
-  color: rgb(24, 133, 223);
-  letter-spacing: 3px;
-  margin: 3rem;
+.favorite button:hover {
+  background: url('../../Icons/deathstar-white.svg') no-repeat;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-  .card_container {
-    width: 70%;
+  .content_card {
+    margin: 0.5rem 0;
   }
-  .previous-page-button,
-  .next-page-button {
-    height: 2rem;
-    width: 2rem;
-  }
+}
 
-  .next-page-button {
-    right: 0.5rem;
-  }
-  .previous-page-button {
-    left: 0.5rem;
-  }
+article {
+  position: ;
 }
