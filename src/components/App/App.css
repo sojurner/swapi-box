@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel");
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
 
 .App {
   margin: 0;
@@ -17,9 +17,45 @@
 .App__TITLE h1 {
   color: #9c816b;
   font-size: 2.5rem;
-  font-family: "Cinzel", "STJEDISE", serif;
+  font-family: 'Cinzel', 'STJEDISE', serif;
   text-align: center;
   margin: 0;
+}
+
+.fa-galactic-republic,
+.fa-chevron-circle-left {
+  color: #c9c0b5;
+  position: absolute;
+  font-size: 3rem;
+  top: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: #c9c0b5;
+  padding: 0 0 0 2px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.fa-chevron-circle-left {
+  font-size: 1.7rem;
+  left: 14rem;
+  top: 1.5rem;
+
+  z-index: 100;
+  animation: slideInLeft 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.fa-chevron-circle-left:hover {
+  color: rgb(220, 220, 195);
+}
+
+.fa-galactic-republic {
+  left: 2rem;
+}
+
+.fa-galactic-republic:hover {
+  color: beige;
+  animation: dark-pulse 1.4s linear infinite;
 }
 
 .header {
@@ -32,10 +68,11 @@
   width: 100%;
   max-width: 32rem;
   text-align: center;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
 }
 
-.header h1, .header h4 {
+.header h1,
+.header h4 {
   margin: 0.2rem;
 }
 
@@ -50,8 +87,20 @@
 }
 
 .vehicles {
-  background: url(../../images/star-wars-droid.jpg) no-repeat center center fixed;
+  background: url(../../images/star-wars-droid.jpg) no-repeat center center
+    fixed;
   background-size: cover;
 }
 
+@keyframes dark-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(252, 250, 250, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.146);
+  }
 
+  100% {
+    box-shadow: 0 0 0 0 rgba(145, 145, 145, 0.132);
+  }
+}
