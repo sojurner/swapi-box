@@ -1,0 +1,12 @@
+.table-headers {
+  position: absolute;
+  left: 60vh;
+  right: 50vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-elements {
+  color: antiquewhite;
+  margin: 0 1rem;
+}
